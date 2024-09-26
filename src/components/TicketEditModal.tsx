@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { lightenColor } from "../utils/ligthenColor";
 
@@ -21,6 +21,16 @@ const TicketEditModal: React.FC<ModalProps> = ({
   onContentChange,
   color,
 }) => {
+  const [isTouched, setIsTouched] = useState(false);
+
+  const handleSave = () => {
+    if (content.trim()) {
+      onSave();
+    } else {
+      setIsTouched(true);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -34,11 +44,22 @@ const TicketEditModal: React.FC<ModalProps> = ({
           <TicketInput
             value={content}
             color={color}
-            onChange={onContentChange}
+            onChange={(e) => {
+              setIsTouched(true);
+              onContentChange(e);
+            }}
+            isInvalid={isTouched && !content.trim()}
           />
+          {isTouched && !content.trim() && (
+            <ValidationMessage>
+              Ticket content cannot be empty.
+            </ValidationMessage>
+          )}
         </ModalBody>
         <ModalFooter>
-          <SaveButton onClick={onSave}>Save</SaveButton>
+          <SaveButton onClick={handleSave} disabled={!content.trim()}>
+            Save
+          </SaveButton>
           <CancelButton onClick={onClose}>Cancel</CancelButton>
         </ModalFooter>
       </ModalWrapper>
@@ -103,13 +124,14 @@ const ModalFooter = styled.div`
   gap: 8px;
 `;
 
-const SaveButton = styled.button`
+const SaveButton = styled.button<{ disabled: boolean }>`
   padding: 8px 16px;
-  color: black;
+  color: ${({ disabled }) => (disabled ? "gray" : "black")};
   border: 1px solid gray;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   font-size: 16px;
+  background-color: ${({ disabled }) => (disabled ? "#f0f0f0" : "white")};
 `;
 
 const CancelButton = styled.button`
@@ -121,14 +143,13 @@ const CancelButton = styled.button`
   font-size: 16px;
 `;
 
-const TicketInput = styled.input<{ color: string }>`
+const TicketInput = styled.input<{ color: string; isInvalid: boolean }>`
   width: 100%;
   height: 50%;
   padding: 8px;
   font-size: 20px;
   font-weight: 500;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  border-color: white;
   background-color: ${({ color }) => lightenColor(color, 50)};
   color: white;
   text-align: center;
@@ -139,4 +160,11 @@ const TicketInput = styled.input<{ color: string }>`
     border-color: white;
     box-shadow: 0 0 4px white;
   }
+`;
+
+const ValidationMessage = styled.div`
+  color: red;
+  font-size: 15px;
+  margin-top: 8px;
+  text-align: center;
 `;
