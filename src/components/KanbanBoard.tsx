@@ -23,7 +23,7 @@ const KanbanBoard: React.FC = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="App">
+      <BoardWrapper>
         <SearchBarWrapper>
           <SearchInput
             type="text"
@@ -32,7 +32,6 @@ const KanbanBoard: React.FC = () => {
             onChange={handleSearchChange}
           />
         </SearchBarWrapper>
-
         <ColumnsWrapper>
           {filteredColumns.map((column) => (
             <KanbanColumn
@@ -47,16 +46,29 @@ const KanbanBoard: React.FC = () => {
             />
           ))}
         </ColumnsWrapper>
-      </div>
+      </BoardWrapper>
     </DndProvider>
   );
 };
 
 export default KanbanBoard;
 
+const BoardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+`;
+
 const SearchBarWrapper = styled.div`
   padding: 16px;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 992px) {
+    justify-content: center;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -70,16 +82,12 @@ const ColumnsWrapper = styled.div`
   gap: 15px;
   justify-content: center;
   padding: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 992px) {
     flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
+    flex-direction: row;
   }
 `;
