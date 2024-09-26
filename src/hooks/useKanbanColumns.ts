@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { Column, Ticket } from "../types";
 
 const LOCAL_STORAGE_KEY = "kanban-columns";
