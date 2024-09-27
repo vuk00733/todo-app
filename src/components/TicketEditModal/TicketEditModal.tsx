@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { lightenColor } from "../utils/ligthenColor";
+import { lightenColor } from "../../utils/ligthenColor";
 
 interface ModalProps {
   isOpen: boolean;

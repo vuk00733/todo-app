@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useDrop } from "react-dnd";
-import { Ticket } from "../types";
-import KanbanTicket from "./KanbanTicket";
-import { lightenColor } from "../utils/ligthenColor";
+import { Ticket } from "../../types";
+import KanbanTicket from "../KanbanTicket/KanbanTicket";
+import { lightenColor } from "../../utils/ligthenColor";
 
 interface KanbanColumnProps {
   title: string;

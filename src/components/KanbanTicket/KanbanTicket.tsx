@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useDrag } from "react-dnd";
-import { Ticket } from "../types";
-import TicketEditModal from "./TicketEditModal";
-import { lightenColor } from "../utils/ligthenColor";
+import { Ticket } from "../../types";
+import TicketEditModal from "../TicketEditModal/TicketEditModal";
+import { lightenColor } from "../../utils/ligthenColor";
 
 interface KanbanTicketProps {
   ticket: Ticket;

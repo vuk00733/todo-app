@@ -2,10 +2,10 @@ import React, { useState, useMemo } from "react";
 import styled from "styled-components";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import KanbanColumn from "./KanbanColumn";
-import { getColumnColor } from "../utils/getColumnColor";
-import { useKanbanColumns } from "../hooks/useKanbanColumns";
-import { filterTicketsByQuery } from "../utils/filterTicketsByQuery";
+import KanbanColumn from "../KanbanColumn/KanbanColumn";
+import { getColumnColor } from "../../utils/getColumnColor";
+import { useKanbanColumns } from "../../hooks/useKanbanColumns";
+import { filterTicketsByQuery } from "../../utils/filterTicketsByQuery";
 
 const KanbanBoard: React.FC = () => {
   const { columns, addTicket, updateTicket, deleteTicket, moveTicket } =
