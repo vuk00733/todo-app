@@ -42,7 +42,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
 
   return (
     <ColumnContainer>
-      <ColumnHeader columnColor={columnColor}>
+      <ColumnHeader color={columnColor}>
         <HeaderContent>
           <TitleWrapper>
             <h2>{title}</h2>
@@ -51,7 +51,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
           <AddTicketButton onClick={onAddTicket}>+</AddTicketButton>
         </HeaderContent>
       </ColumnHeader>
-      <ColumnWrapper ref={drop} columnColor={columnColor} isOver={isOver}>
+      <ColumnWrapper ref={drop} color={columnColor} $isOver={isOver}>
         <TicketList>
           {tickets.map((ticket) => (
             <KanbanTicket

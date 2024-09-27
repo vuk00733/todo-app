@@ -8,20 +8,20 @@ export const ColumnContainer = styled.div`
 `;
 
 export const ColumnWrapper = styled.div<{
-  columnColor: string;
-  isOver: boolean;
+  color: string;
+  $isOver: boolean;
 }>`
-  background-color: ${({ columnColor }) => lightenColor(columnColor, 70)};
+  background-color: ${({ color }) => lightenColor(color, 70)};
   width: 300px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s ease;
-  border: ${({ isOver }) => (isOver ? "2px dashed white" : "none")};
+  border: ${({ $isOver }) => ($isOver ? "2px dashed white" : "none")};
 `;
 
-export const ColumnHeader = styled.div<{ columnColor: string }>`
-  background-color: ${({ columnColor }) => columnColor};
+export const ColumnHeader = styled.div<{ color: string }>`
+  background-color: ${({ color }) => color};
   padding: 16px;
   color: white;
   text-align: center;

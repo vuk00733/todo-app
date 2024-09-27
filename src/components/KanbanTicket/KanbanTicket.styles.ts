@@ -16,7 +16,10 @@ export const DeleteIcon = styled.div`
   }
 `;
 
-export const TicketWrapper = styled.div<{ isDragging: boolean; color: string }>`
+export const TicketWrapper = styled.div<{
+  $isDragging: boolean;
+  color: string;
+}>`
   background-color: ${({ color }) => lightenColor(color, 35)};
   width: 150px;
   height: 150px;
@@ -29,8 +32,8 @@ export const TicketWrapper = styled.div<{ isDragging: boolean; color: string }>`
   color: white;
   font-size: 16px;
   font-weight: bold;
-  opacity: ${({ isDragging }) => (isDragging ? 0.7 : 1)};
-  transform: ${({ isDragging }) => (isDragging ? "scale(1.15)" : "scale(1)")};
+  opacity: ${({ $isDragging }) => ($isDragging ? 0.7 : 1)};
+  transform: ${({ $isDragging }) => ($isDragging ? "scale(1.15)" : "scale(1)")};
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), opacity 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.15) 4px 4px 4px;
   cursor: grab;

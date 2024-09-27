@@ -57,7 +57,7 @@ const KanbanTicket: React.FC<KanbanTicketProps> = ({
 
   return (
     <>
-      <TicketWrapper ref={drag} isDragging={isDragging} color={color}>
+      <TicketWrapper ref={drag} $isDragging={isDragging} color={color}>
         <TicketText onDoubleClick={handleDoubleClick}>
           {ticket.content}
         </TicketText>
