@@ -6,10 +6,18 @@ const initialMockData = [
   {
     id: "todo",
     title: "To Do",
-    tickets: [{ id: "1", content: "Initial Ticket" }],
+    tickets: [{ id: "1", content: "Initial Ticket To Do" }],
   },
-  { id: "in-progress", title: "In Progress", tickets: [] as Ticket[] },
-  { id: "done", title: "Done", tickets: [] as Ticket[] },
+  {
+    id: "in-progress",
+    title: "In Progress",
+    tickets: [{ id: "2", content: "Initial Ticket In Progress" }],
+  },
+  {
+    id: "done",
+    title: "Done",
+    tickets: [{ id: "3", content: "Initial Ticket Done" }],
+  },
 ];
 
 export const useKanbanColumns = () => {

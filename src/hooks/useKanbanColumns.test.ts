@@ -45,8 +45,8 @@ describe("useKanbanColumns", () => {
       result.current.addTicket("in-progress", "Start new feature");
     });
 
-    expect(result.current.columns[1].tickets.length).toBe(1);
-    expect(result.current.columns[1].tickets[0].content).toBe(
+    expect(result.current.columns[1].tickets.length).toBe(2);
+    expect(result.current.columns[1].tickets[1].content).toBe(
       "Start new feature"
     );
   });
@@ -79,7 +79,7 @@ describe("useKanbanColumns", () => {
     });
 
     expect(result.current.columns[0].tickets.length).toBe(0);
-    expect(result.current.columns[1].tickets.length).toBe(1);
-    expect(result.current.columns[1].tickets[0].id).toBe("1");
+    expect(result.current.columns[1].tickets.length).toBe(2);
+    expect(result.current.columns[1].tickets[0].id).toBe("2");
   });
 });
