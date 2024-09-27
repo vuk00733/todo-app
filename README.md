@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Main functionalities of the app include:
 
-    1. Kanban board which contains 3 columns and on load the board will include one ticket.
+    1. Kanban board which contains 3 columns and on load the board will include one ticket per column.
 
     2. The tickets can be drag and dropped into each column only in the designated space, if its dropped outside of the designated space the ticket will snap back to the original column.
 
