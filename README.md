@@ -19,13 +19,15 @@ Main functionalities of the app include:
 
     3. Adding tickets for each column via + button on the right.
 
-    4. Editing the tickets by double clicking on the ticket text, will open a modal for editing.
+    4. Editing the tickets by double clicking on the ticket text, will open a modal for editing. The ticket content cannot be empty and trying to save the ticket with empty content will show an error in the modal.
 
-    5. Searching (filtering) the tickets via a search input which is case insensitive.
+    5. Deleting the tickets, which is available only inside the "To Do" column by hovering over a ticket an X will appear in the top right corner of the ticket, clicking on it will delete the ticket. If a ticket from other columns needs to be deleted it should be first moved to the "To Do" column.
 
-    6. The board is responsive for different media queries and will readjust based on screen changes.
+    6. Searching (filtering) the tickets via a search input which is case insensitive.
 
-    7. The board state is saved in local storage and will remain peristant on hard refreshes, if the local storage is cleared the board will default back to the initial state menitioned in 1.
+    7. The board is responsive for different media queries and will readjust based on screen changes.
+
+    8. The board state is saved in local storage and will remain peristant on hard refreshes, if the local storage is cleared the board will default back to the initial state menitioned in 1.
 
 ### `npm test`
 
