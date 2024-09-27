@@ -44,11 +44,13 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/react-beautiful-dnd": "^13.1.8",
     "babel-jest": "^29.7.0",
-    "jest": "^27.5.1"
-  } 
+    "jest": "^27.5.1",
+    "react-dnd-test-backend": "^16.0.1"
+  }
 }
